@@ -1,0 +1,143 @@
+﻿@inject IJSRuntime JSRuntime
+    <header id="header" class="header">
+        <div class="container">
+            <h1 class="logo">
+                <a class="scrollto" href="#hero">
+                    <span class="logo-icon-wrapper"><img class="logo-icon" src="images/greenhaven-logo-120px-high.jpg" alt="icon"></span>
+                </a>
+            </h1><!--//logo-->
+            <nav class="main-nav navbar-expand-lg float-right navbar-inverse" role="navigation">
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button><!--//nav-toggle-->
+
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="nav-item text-uppercase">
+                            <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
+                                Home
+                            </NavLink>
+                        </li>
+                        <li class="nav-item text-uppercase">
+                            <NavLink class="nav-link" href="plan">
+                                Our plans
+                            </NavLink>
+                        </li>
+                        <li class="nav-item text-uppercase">
+                            <NavLink class="nav-link" href="case">
+                                case studies
+                            </NavLink>
+                        </li>
+                        <li class="nav-item text-uppercase">
+                            <NavLink class="nav-link" href="forsale">
+                                prebuilt homes for sale
+                            </NavLink>
+                        </li>
+                        <li class="nav-item text-uppercase" >
+                            <NavLink class="nav-link" href="gallery">
+                                gallery
+                            </NavLink>
+                        </li>
+                        <li class="nav-item text-uppercase" >
+                            <NavLink class="nav-link" href="about">
+                                about
+                            </NavLink>
+                        </li>
+                        <li class="nav-item text-uppercase" >
+                            <NavLink class="nav-link" href="news">
+                                news
+                            </NavLink>
+                        </li>
+                        <li class="nav-item text-uppercase" >
+                            <NavLink class="nav-link" href="contactus">
+                                contact us
+                            </NavLink>
+                        </li>
+                    </ul><!--//nav-->
+                </div><!--//navabr-collapse-->
+            </nav><!--//main-nav-->
+        </div><!--//container-->
+    </header><!--//header-->
+    
+    <div id="hero-carousel" class="hero-carousel carousel carousel-fade slide" data-ride="carousel" data-interval="5000">
+
+        <div class="figure-holder-wrapper">
+            <div class="container">
+                <div class="row justify-content-end">
+                    <div class="figure-holder">
+
+                    </div><!--//figure-holder-->
+                </div><!--//row-->
+            </div><!--//container-->
+        </div><!--//figure-holder-wrapper-->
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li class="active" data-slide-to="0" data-target="#hero-carousel"></li>
+            <li data-slide-to="1" data-target="#hero-carousel"></li>
+            <li data-slide-to="2" data-target="#hero-carousel"></li>
+        </ol>
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+
+            <div class="carousel-item item-1 active d-flex justify-content-around">
+
+                <div style="max-width:400px;" class="m-0 item-content container align-self-center animate__animated animate__fadeInRightBig animate__delay-1s">
+                    <div class="item-content-inner">
+                        <h2 class="heading">Premium quality, energy efficient homes</h2>
+                        <p class="intro">It helps you to build a beautiful and effective landing page to promote your product or side project!</p>
+                        <a class="btn btn-primary btn-cta" href="" target="_blank">Contact US</a>
+
+                    </div><!--//item-content-inner-->
+                </div><!--//item-content-->
+                <img style="max-height:450px;" class=" d-sm-none d-md-block align-self-end img-fluid animate__animated animate__fadeInRightBig animate__delay-2s" src="images/worker.png" alt="image" />
+            </div><!--//item-->
+
+            <div class="carousel-item item-2">
+                <section>
+                    <div class="overlay"></div>
+                    <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+                        <source src="videos/banner-2video.mp4" type="video/mp4">
+                    </video>
+                    <div class="container h-100">
+                        <div class="d-flex h-100 text-center align-items-center">
+                            <div class="w-100 text-white align-self-end pb-5">
+                                <h2>
+                                    Architecturally designed homes to
+                                    maximise space and comfort
+                                </h2>
+                                <div class="d-flex justify-content-center">
+                                    <a class="btn btn-primary btn-cta" href="" target="_blank">See our houres</a>
+                                    <a class="btn btn-primary btn-cta ml-3" href="" target="_blank">See our plans</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div><!--//item-->
+
+            <div class="carousel-item item-3 d-flex justify-content-around">
+                <div class=" item-content container align-self-center animate__animated animate__backInDown animate__delay-1s">
+                    <div class="item-content-inner">
+                        <h2 class="heading">Built by New Zealanders for New Zealanders</h2>
+                        <p class="intro">It helps you to build a beautiful and effective landing page to promote your product or side project!</p>
+                        <a class="btn btn-primary btn-cta" href="" target="_blank">Contact US</a>
+                    </div><!--//item-content-inner-->
+                </div><!--//item-content-->
+            </div><!--//item-->
+        </div><!--//carousel-inner-->
+
+    </div><!--//carousel-->
+    @code{ int currentCount = 0;
+        bool firstRender = true;
+        protected override async Task OnAfterRenderAsync(bool firstRender)
+        {
+            if (firstRender)
+            {
+                await JSRuntime.InvokeVoidAsync("blazorInterop.initializeCarousel");
+            }
+        } }
