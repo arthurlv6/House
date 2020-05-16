@@ -68,3 +68,15 @@ function gallery(item) {
     $("." + item).addClass("animate__fadeInUp");
     $("." + item).addClass("d-block");
 }
+
+blazorInterop.initializeScreenToBodyPage = function () {
+    $("body, html").animate({
+        scrollTop: 500
+    }, 1000)
+};
+
+blazorInterop.initializeHideDropdow = function () {
+    $("#navbar-collapse").removeClass("show");
+};
+
+//

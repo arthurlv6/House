@@ -1,17 +1,41 @@
 ﻿@page "/contactus"
+<div class="d-flex flex-column container">
+    <h3>Contact US</h3>
+    <hr />
+    <div class="d-flex flex-wrap">
+        <div class="d-flex flex-column w-50" style="min-width:500px;">
+            <h4>Looking for an architecturally designed modular home?</h4>
+            <p>
+                Visit our show home located at <strong> 2-4 Waikawa Beach Road, Manakau.</strong> Open from Wednesday to Sunday, 11am – 4pm.
+            </p>
+            <p>
+                To book a personal appointment at the show home with Todd, our Company Director, please fill out the form below.
+            </p>
+            <p>
+                To contact the team to discuss your Greenhaven Home, call us on 0800 777 175.
+            </p>
+        </div>
+        <div class="d-flex flex-column w-50">
+            <h4>Our address on map</h4>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6048.712355556112!2d175.21755!3d-40.710175!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6d40926e51f15665%3A0xa0f2f23fac658c49!2s2%2F4%20Waikawa%20Beach%20Road%2C%20Manakau%205573!5e0!3m2!1sen!2snz!4v1589624338105!5m2!1sen!2snz" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
 
-    <div class="d-flex h-100 justify-content-center align-items-center" style="min-height:500px;">
-        <div class="d-flex flex-column">
-            <h3 class="text-info align-self-center">Working on contact us</h3>
-            <img src="images/building.png" />
         </div>
     </div>
+    <div class="d-flex">
+    </div>
+</div>
 
-@code {
-    private int currentCount = 0;
 
-    private void IncrementCount()
+
+@inject IJSRuntime JSRuntime
+@code{ int currentCount = 0;
+    bool firstRender = true;
+    protected override async Task OnAfterRenderAsync(bool firstRender)
     {
-        currentCount++;
+        if (firstRender)
+        {
+            await JSRuntime.InvokeVoidAsync("blazorInterop.initializeScreenToBodyPage");
+            await JSRuntime.InvokeVoidAsync("blazorInterop.initializeHideDropdow");
+        }
     }
 }

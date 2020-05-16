@@ -1,17 +1,20 @@
 ﻿@page "/about"
 
-    <div class="d-flex h-100 justify-content-center align-items-center" style="min-height:500px;">
-        <div class="d-flex flex-column">
-            <h3 class="text-info align-self-center">Working on about</h3>
-            <img src="images/building.png" />
-        </div>
+<div class="d-flex h-100 justify-content-center align-items-center" style="min-height:500px;">
+    <div class="d-flex flex-column">
+        <h3 class="text-info align-self-center">Working on about</h3>
+        <img src="images/building.png" />
     </div>
-
-@code {
-    private int currentCount = 0;
-
-    private void IncrementCount()
+</div>
+@inject IJSRuntime JSRuntime
+@code{ int currentCount = 0;
+    bool firstRender = true;
+    protected override async Task OnAfterRenderAsync(bool firstRender)
     {
-        currentCount++;
+        if (firstRender)
+        {
+            await JSRuntime.InvokeVoidAsync("blazorInterop.initializeScreenToBodyPage");
+            await JSRuntime.InvokeVoidAsync("blazorInterop.initializeHideDropdow");
+        }
     }
 }

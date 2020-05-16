@@ -7,11 +7,15 @@
     </div>
 </div>
 
-@code {
-    private int currentCount = 0;
-
-    private void IncrementCount()
+@inject IJSRuntime JSRuntime
+@code{ int currentCount = 0;
+    bool firstRender = true;
+    protected override async Task OnAfterRenderAsync(bool firstRender)
     {
-        currentCount++;
+        if (firstRender)
+        {
+            await JSRuntime.InvokeVoidAsync("blazorInterop.initializeScreenToBodyPage");
+            await JSRuntime.InvokeVoidAsync("blazorInterop.initializeHideDropdow");
+        }
     }
 }
