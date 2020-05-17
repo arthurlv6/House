@@ -1,11 +1,75 @@
 ﻿@page "/plan"
 
-<div class="d-flex h-100 justify-content-center align-items-center" style="min-height:500px;">
-    <div class="d-flex flex-column">
-        <h3 class="text-info align-self-center">Working on plan</h3>
-        <img src="images/building.png" />
+    <div class="d-flex container flex-wrap">
+        <div class="d-flex flex-column w-50 flex-grow-1 pb-sm-3">
+            <div class="accordion" id="accordionExample">
+                <div class="card">
+                    <div class="card-header" id="headingOne">
+                        <h2 class="mb-0">
+                            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                What materials are used to make it a Eco home?
+                            </button>
+                        </h2>
+                    </div>
+
+                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                        <div class="card-body">
+                            Wherever possible, we use sustainable and renewable materials including energy efficient appliances and lighting and solar PV panels for electrical power. Low VOC paints, non-toxic glues and stains are used along with above code insulation made from recycled plastic bottles and thermal mass flooring areas to ensure natural passive heating and cooling.  We also offer other off grid Eco systems on request. Windmill power generation, aerated eco septic tank and grey water recycling systems are some of the products used for the off grid lifestyle.
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" id="headingTwo">
+                        <h2 class="mb-0">
+                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                Can the floor plans be changed?
+                            </button>
+                        </h2>
+                    </div>
+                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                        <div class="card-body">
+                            All of our standard floor plans can be changed and adapted to suit your exact requirements and site constraints. We also offer an expert Eco focused architectural design-build service.
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" id="headingThree">
+                        <h2 class="mb-0">
+                            <button class="btn btn-link collapsed" style="text-align:left" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                Will I have a dedicated point of contact through my Greenhaven build?
+                            </button>
+                        </h2>
+                    </div>
+                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                        <div class="card-body">
+                            We are proud to say we are a family owned New Zealand company who are flexible and responsive to your needs. We guarantee a high level of personal service on every build to ensure we maintain a premium quality experience and finish. You will have direct contact with your dedicated Project Manager from your contract signing through to turning the key on your new Greenhaven Home and beyond. Our service ensures your expectations are exceeded at every point of your journey.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="d-flex flex-column pl-md-5 w-50 flex-grow-1 pl-sm-0 ">
+            <div class="card">
+                <img class="img-fluid card-img-top" src="https://greenhavenhomes.co.nz/wp-content/uploads/2019/02/Whare-iti-1-1024x683.jpg" />
+                <div class="card-body">
+                    <div class="d-flex flex-wrap">
+                        <div class="w-40 flex-grow-1">
+                            <img class="img-fluid" style="max-width:200px;" src="https://greenhavenhomes.co.nz/wp-content/uploads/2019/02/Whare-iti-1-plan.jpg" />
+                        </div>
+
+                        <div class="d-flex flex-grow-1 flex-column w-60">
+                            <h5 class="card-title">Plan Whare iti Living</h5>
+                            <p class="card-text"><strong>House Area:</strong> 49.80 sqm</p>
+                            <p class="card-text"><strong>House Dimensions:</strong> 9.600 x 5.400</p>
+                            <p class="card-text"><strong>Open Timber Deck: </strong> 22 sqm</p>
+                            <p class="card-text"><strong>Investment: </strong> Starting from $266,792 incl. GST</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-</div>
 
 @inject IJSRuntime JSRuntime
 @code{ int currentCount = 0;

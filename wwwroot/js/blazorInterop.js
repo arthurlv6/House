@@ -1,7 +1,7 @@
 ﻿var blazorInterop = blazorInterop || {};
 
 blazorInterop.initializeCarousel = function () {
-    $('#hero-carousel').carousel({ interval: 5000 });
+    $('#hero-carousel').carousel({ interval: 10000 });
 
     //see step 2 to understand these news id's:
     $('#carousel-control-prev').click(

@@ -1,0 +1,17 @@
+﻿Sitemap: http://befound.pt/sitemap.xml
+# Group 1
+User-agent: framework
+DisAllow: /_framework/
+
+User-agent: css
+DisAllow: /css/
+
+User-agent: images
+DisAllow: /images/
+
+User-agent: js
+DisAllow: /js/
+
+# Group 2
+User-agent: *
+Allow: /

@@ -1,9 +1,8 @@
 ﻿@page "/contactus"
 <div class="d-flex flex-column container">
-    <h3>Contact US</h3>
-    <hr />
+    <h3 class="text-success">Contact US</h3>
     <div class="d-flex flex-wrap">
-        <div class="d-flex flex-column w-50" style="min-width:500px;">
+        <div class="d-flex flex-column w-50 flex-grow-1">
             <h4>Looking for an architecturally designed modular home?</h4>
             <p>
                 Visit our show home located at <strong> 2-4 Waikawa Beach Road, Manakau.</strong> Open from Wednesday to Sunday, 11am – 4pm.
@@ -15,17 +14,31 @@
                 To contact the team to discuss your Greenhaven Home, call us on 0800 777 175.
             </p>
         </div>
-        <div class="d-flex flex-column w-50">
-            <h4>Our address on map</h4>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6048.712355556112!2d175.21755!3d-40.710175!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6d40926e51f15665%3A0xa0f2f23fac658c49!2s2%2F4%20Waikawa%20Beach%20Road%2C%20Manakau%205573!5e0!3m2!1sen!2snz!4v1589624338105!5m2!1sen!2snz" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-
+        <div class="d-flex flex-column w-50 flex-grow-1">
+            <img class="img-fluid pr-md-3 pr-sm-0" src="images/staff.png" alt="about us" />
+            <h4 class="text-success">The team behind Greenhaven Homes</h4>
+            <p>
+                We have a dedicated and talented crew who have a high level of knowledge and technical expertise in all areas of the build process.
+            </p>
         </div>
     </div>
     <div class="d-flex">
     </div>
 </div>
 
-
+<div class="d-flex flex-column container">
+    <div class="d-flex flex-wrap">
+        <div class="d-flex flex-column w-50 flex-grow-1 pl-sm-3 pl-0">
+            <div class="embed-responsive embed-responsive-16by9">
+                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/ChESNP7YPpQ" allowfullscreen></iframe>
+            </div>
+            <h4 class="img-fluid">What sets Greenhaven apart from the rest? Hear from Todd, our Company Director.</h4>
+        </div>
+        <div class="d-flex flex-column container w-50 flex-grow-1 p-0 pb-3">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6048.712355556112!2d175.21755!3d-40.710175!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6d40926e51f15665%3A0xa0f2f23fac658c49!2s2%2F4%20Waikawa%20Beach%20Road%2C%20Manakau%205573!5e0!3m2!1sen!2snz!4v1589624338105!5m2!1sen!2snz" frameborder="0" style="border:0; min-height:300px;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+        </div>
+    </div>
+</div>
 
 @inject IJSRuntime JSRuntime
 @code{ int currentCount = 0;

@@ -1,4 +1,10 @@
 ﻿@import url("open-iconic/font/css/open-iconic-bootstrap.min.css");
+h1, h2, h3, h4, h5 {
+    color:forestgreen
+}
+.d-flex{
+    min-width:300px;
+}
 .hero-carousel {
     height: 560px;
     color: #fff;
@@ -317,7 +323,7 @@ section {
     }
 
     .hero-carousel .carousel-inner .item-content-inner {
-        padding-top: 100px;
+        padding-top: 50px;
     }
 
     .hero-section .figure-holder .figure-image {
@@ -342,15 +348,15 @@ section {
         }
 
     .hero-carousel {
-        height: 660px;
+        height: 560px;
     }
 
     .hero-section .carousel-inner {
-        height: 660px;
+        height: 560px;
     }
 
     .hero-carousel .carousel-inner .item {
-        height: 660px;
+        height: 560px;
     }
 
     .testimonials-section .item .profile-image {
